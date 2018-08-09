@@ -18,16 +18,12 @@ MunroListView.prototype.bindEvents = function () {
       var munrosOfRegion = this.filterMunros(selectedRegion);
       this.render(munrosOfRegion);
   })
-
 };
 
 MunroListView.prototype.displayDropdown = function(munros) {
   var regions = munros.map(munro => munro.region);
-
   var uniqueRegions = Array.from(new Set(regions));
-
   var dropdown = document.querySelector("#dropdown")
-
 
   uniqueRegions.forEach((uniqueRegion, index) => {
     const option = document.createElement('option');
