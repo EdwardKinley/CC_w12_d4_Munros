@@ -25,10 +25,13 @@ MunroView.prototype.createStatList = function () {
   const statList = document.createElement('ul');
   const meaning = document.createElement('li');
   const height = document.createElement('li');
+  const region = document.createElement('li');
   meaning.textContent = `Meaning: ${this.munro.meaning}`;
   height.textContent = `Height: ${this.munro.height}m`;
+  region.textContent = `Region: ${this.munro.region}`;
   statList.appendChild(meaning);
   statList.appendChild(height);
+  statList.appendChild(region);
   return statList;
 };
 
