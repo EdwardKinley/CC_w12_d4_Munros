@@ -1,6 +1,9 @@
 body {
   background-color: gold;
   font-family: sans-serif;
+  margin: 2rem;
+  padding: 2rem;
+  border: 0.5rem solid black;
 }
 
 select {

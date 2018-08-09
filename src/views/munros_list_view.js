@@ -17,6 +17,7 @@ MunroListView.prototype.bindEvents = function () {
       const selectedRegion = evt.target.value;
       var munrosOfRegion = this.filterMunros(selectedRegion);
       this.render(munrosOfRegion);
+      console.log(munrosOfRegion.length);
   })
 };
 
@@ -27,7 +28,7 @@ MunroListView.prototype.displayDropdown = function(munros) {
 
   uniqueRegions.forEach((uniqueRegion, index) => {
     const option = document.createElement('option');
-    option.textContent = uniqueRegion;
+    option.textContent = `${uniqueRegion} (${this.filterMunros(uniqueRegion).length})`;
     option.value = uniqueRegion;
     dropdown.appendChild(option);
   });
