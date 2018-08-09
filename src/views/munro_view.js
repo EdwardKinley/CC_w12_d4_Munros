@@ -14,10 +14,9 @@ MunroView.prototype.render = function () {
  munroContainer.appendChild(statList);
 };
 
-
 MunroView.prototype.createMunroHeader = function () {
-  const name = document.createElement('h2');
-  name.textContent = `${this.munro.name} facts`;
+  const name = document.createElement('h3');
+  name.textContent = `${this.munro.name}`;
   return name;
 };
 

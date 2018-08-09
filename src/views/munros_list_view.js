@@ -9,6 +9,10 @@ MunroListView.prototype.bindEvents = function () {
   PubSub.subscribe('Munros:data-ready', (evt) => {
     this.munros = evt.detail;
     this.displayDropdown(this.munros);
+    var headingLocation = document.querySelector('#munros-list');
+    var heading = document.createElement('h1');
+    heading.textContent = `All Munros (${this.munros.length})`;
+    headingLocation.appendChild(heading);
     this.render(this.munros);
   });
 
@@ -16,6 +20,10 @@ MunroListView.prototype.bindEvents = function () {
       this.container.innerHTML = '';
       const selectedRegion = evt.target.value;
       var munrosOfRegion = this.filterMunros(selectedRegion);
+      var headingLocation = document.querySelector('#munros-list');
+      var heading = document.createElement('h1');
+      heading.textContent = `Munros in region "${selectedRegion}" (${munrosOfRegion.length})`;
+      headingLocation.appendChild(heading);
       this.render(munrosOfRegion);
       console.log(munrosOfRegion.length);
   })
@@ -32,7 +40,6 @@ MunroListView.prototype.displayDropdown = function(munros) {
     option.value = uniqueRegion;
     dropdown.appendChild(option);
   });
-
 };
 
 MunroListView.prototype.render = function (data) {
